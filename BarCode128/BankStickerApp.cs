@@ -117,7 +117,7 @@ namespace BarCode128
                 return;
             }
 
-            var path = $"{DateTime.Now.ToString("yyyyMMddHHmmssfff")}.pdf";
+            var path = $"Pdfs/{DateTime.Now.ToString("yyyyMMddHHmmssfff")}.pdf";
 
             BaseFont bfTimes = BaseFont.CreateFont("Arimo-Regular.ttf", BaseFont.IDENTITY_H, true);
 
@@ -214,7 +214,7 @@ namespace BarCode128
             VoucherNo.Text = lastUsedNumber;
             File.WriteAllText("BankNumber.txt", lastUsedNumber);
 
-            SendToPrinter(path);
+            //SendToPrinter(path);
         }
 
         private string ConvertToCode128C(string initialText)
